@@ -1,0 +1,15 @@
+{
+  "name": "cheak/cli_php_parser",
+  "authors": [
+    {
+      "name": "CheakChe",
+      "email": "saumonminiball@gmail.com"
+    }
+  ],
+  "require": {},
+  "autoload": {
+    "classmap": [
+      "app"
+    ]
+  }
+}
