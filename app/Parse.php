@@ -3,19 +3,28 @@
 
 namespace app\parse;
 
+use app\basic\Basic as Basic;
 
-class Parse
+class Parse implements Basic
 {
     public function __construct()
     {
     }
 
-    function parse($url)
+    function index()
     {
-        if (!preg_match("/http:\/\//i", $url) || !preg_match("/http:\/\//i", $url)) {
-            echo 'Your URL was without protocol — we added protocol' . PHP_EOL;
-            echo $url = 'https://' . $url . PHP_EOL;
+        $url = readline('Enter site URL for parsing: ');
+        if (!preg_match("/http:\/\//i", $url) || !preg_match("/https:\/\//i", $url)) {
+            echo 'Your URL was without protocol — we added protocol.' . PHP_EOL;
+            echo $url = 'https://' . $url;
         }
-        print_r(parse_url($url));
+        echo PHP_EOL;
+        $site = file_get_contents($url);
+        preg_match_all('/<a.*href="(.+)".*>/U', $site, $match);
+//        preg_match_all('/<img.*src="(.+)".*>/U', $site, $match);
+        foreach ($match[1] as &$match) {
+            echo $match = $url . $match . PHP_EOL;
+        }
+        print_r($match[1]);
     }
 }

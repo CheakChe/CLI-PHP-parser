@@ -3,16 +3,22 @@
 
 namespace app\help;
 
+use app\basic\Basic as Basic;
 
-class Help
+class Help implements Basic
 {
+    /**
+     * @var false|string
+     */
+    private $help;
+
     public function __construct()
     {
-        $help = file_get_contents('README.me');
+        $this->help = file_get_contents('README.me');
     }
 
-    function help()
+    function index()
     {
-        echo $help;
+        echo $this->help;
     }
 }

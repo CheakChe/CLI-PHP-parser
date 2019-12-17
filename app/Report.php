@@ -3,15 +3,16 @@
 
 namespace app\report;
 
+use app\basic\Basic as Basic;
 
-class Report
+class Report implements Basic
 {
     public function __construct()
     {
     }
 
-    function report()
+    function index()
     {
-        echo PHP_EOL . 'no work';
+        echo 'no work' . PHP_EOL;
     }
 }
