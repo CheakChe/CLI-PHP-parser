@@ -1,17 +1,16 @@
 <?php
 
 
-namespace app\report;
+namespace App\Components\Workers;
 
-use app\basic\Basic as Basic;
 
-class Report implements Basic
+class Report extends Worker
 {
     public function __construct()
     {
     }
 
-    function index()
+    function work()
     {
         echo 'no work' . PHP_EOL;
     }

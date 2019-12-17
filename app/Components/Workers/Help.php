@@ -1,11 +1,10 @@
 <?php
 
 
-namespace app\help;
+namespace App\Components\Workers;
 
-use app\basic\Basic as Basic;
 
-class Help implements Basic
+class Help extends Worker
 {
     /**
      * @var false|string
@@ -17,7 +16,7 @@ class Help implements Basic
         $this->help = file_get_contents('README.me');
     }
 
-    function index()
+    function work()
     {
         echo $this->help;
     }

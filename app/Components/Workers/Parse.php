@@ -1,17 +1,17 @@
 <?php
 
 
-namespace app\parse;
+namespace App\Components\Workers;
 
-use app\basic\Basic as Basic;
 
-class Parse implements Basic
+class Parse extends Worker
 {
     public function __construct()
     {
     }
 
-    function index()
+
+    function work()
     {
         $url = readline('Enter site URL for parsing: ');
         if (!preg_match("/http:\/\//i", $url) || !preg_match("/https:\/\//i", $url)) {
