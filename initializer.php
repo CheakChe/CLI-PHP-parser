@@ -1,15 +1,15 @@
 <?php
 
-use App\Components\Workers\Worker;
+use App\Components\Commands\Command;
 
 while ($request = trim(readline('Enter your command: '))) {
 
     try {
-        $worker = Worker::getWorker($request);
+        $command = Command::getCommand($request);
     } catch (Exception $e) {
         echo $e->getMessage() . PHP_EOL;
         continue;
     }
 
-    $worker->work();
+    $command->work();
 }

@@ -1,10 +1,10 @@
 <?php
 
 
-namespace App\Components\Workers;
+namespace App\Components\Commands;
 
 
-class Help extends Worker
+class Help extends Command
 {
     /**
      * @var false|string

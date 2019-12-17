@@ -1,12 +1,12 @@
 <?php
 
 
-namespace App\Components\Workers;
+namespace App\Components\Commands;
 
 
 use App\Exceptions\UnknownCommand;
 
-abstract class Worker
+abstract class Command
 {
     const PARSER_KEY = 'parse';
     const REPORT_KEY = 'report';
@@ -19,9 +19,9 @@ abstract class Worker
      * @return $this
      * @throws UnknownCommand
      */
-    final static public function getWorker(string $workerKey): self
+    final static public function getCommand(string $commandKey): self
     {
-        switch ($workerKey) {
+        switch ($commandKey) {
             case self::PARSER_KEY:
                 return new Parse();
                 break;
@@ -32,7 +32,7 @@ abstract class Worker
                 return new Help();
                 break;
             default:
-                throw new UnknownCommand($workerKey);
+                throw new UnknownCommand($commandKey);
                 break;
         }
     }
