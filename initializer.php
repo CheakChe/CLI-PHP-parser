@@ -11,5 +11,6 @@ while ($request = trim(readline('Enter your command: '))) {
         continue;
     }
 
-    $command->work();
+    echo $command->work();
+//    $command->description();
 }

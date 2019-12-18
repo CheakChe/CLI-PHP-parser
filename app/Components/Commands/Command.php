@@ -13,9 +13,10 @@ abstract class Command
     const HELP_KEY = 'help';
 
     abstract function work();
+//    abstract function description();
 
     /**
-     * @param string $workerKey
+     * @param string $commandKey
      * @return $this
      * @throws UnknownCommand
      */

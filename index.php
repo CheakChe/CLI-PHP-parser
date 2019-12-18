@@ -1,4 +1,4 @@
-#!/usr/bin/php -ddisplay_errors=E_ALL
+#!/usr/bin/php
 <?php
 
 require_once 'vendor/autoload.php';

@@ -20,4 +20,5 @@ class Help extends Command
     {
         echo $this->help;
     }
+
 }
