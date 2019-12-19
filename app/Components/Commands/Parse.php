@@ -23,7 +23,9 @@ class Parse extends Command
     function work()
     {
         $url = readline('Enter site URL for parsing: ');
+        if ($url == '') return 'URL NULL' . PHP_EOL;
         $this->basic_url = $this->deleteSlash(parse_url($url, PHP_URL_HOST));
+        if ($this->basic_url == NULL) $this->basic_url = $this->deleteSlash($url);
         if (parse_url($url, PHP_URL_SCHEME) == NULL) {
             echo 'Your URL was without protocol — we added protocol.' . PHP_EOL;
             echo $url = 'https://' . $url;
