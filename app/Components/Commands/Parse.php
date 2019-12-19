@@ -84,8 +84,6 @@ class Parse extends Command
     function createFile($name, $data, $url = '')
     {
         $this->file = 'files/parsing/' . $this->basic_url . '_' . $name . '_' . date("d.m.Y") . '.csv';
-        var_dump($this->file);
-        die;
         $csv = fopen($this->file, 'a');
         foreach ($data as $row) {
             if ($url != '') {
